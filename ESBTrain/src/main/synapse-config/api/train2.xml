@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/train2" name="train2" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/trains">
+        <inSequence>
+            <send/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

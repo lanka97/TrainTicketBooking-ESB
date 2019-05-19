@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/train" name="train" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="OPTIONS GET" uri-template="/{email}/{password}">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getUser"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log/>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST GET" uri-template="/user">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="signup"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/gov/emp/{nic}">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getGovEmp"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/trains">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getTrains"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/ticket">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="setTicket"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/ticket/passenger/{passengerEmail}">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getPassengerTickect"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/payment/validate/{type}/{pin}/{number}">
+        <inSequence>
+            <log/>
+            <log level="custom">
+                <property expression="get-property('uri.var.type')" name="paymentType"/>
+            </log>
+            <switch source="get-property('uri.var.type')">
+                <case regex="card">
+                    <log level="custom">
+                        <property name="property_name" value="property_value"/>
+                    </log>
+                    <send>
+                        <endpoint key="cardCheck"/>
+                    </send>
+                </case>
+                <case regex="phone">
+                    <log/>
+                    <send>
+                        <endpoint key="phonecheck"/>
+                    </send>
+                </case>
+                <default>
+                    <log/>
+                    <respond/>
+                </default>
+            </switch>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/payment/transaction/{type}">
+        <inSequence>
+            <log/>
+            <log level="custom">
+                <property expression="get-property('uri.var.type')" name="paymentType"/>
+            </log>
+            <switch source="get-property('uri.var.type')">
+                <case regex="card">
+                    <send>
+                        <endpoint key="cardTrans"/>
+                    </send>
+                </case>
+                <case regex="phone">
+                    <send>
+                        <endpoint key="phoneTrans"/>
+                    </send>
+                </case>
+                <default>
+                    <respond/>
+                </default>
+            </switch>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

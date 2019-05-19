@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="getGovEmp" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getGovEmp.xml</file>
+    </artifact>
+    <artifact name="cardCheck" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/cardCheck.xml</file>
+    </artifact>
+    <artifact name="cardTrans" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/cardTrans.xml</file>
+    </artifact>
+    <artifact name="phonecheck" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/phonecheck.xml</file>
+    </artifact>
+    <artifact name="phoneTrans" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/phoneTrans.xml</file>
+    </artifact>
+    <artifact name="getTrains" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getTrains.xml</file>
+    </artifact>
+    <artifact name="getPassengerTickect" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getPassengerTickect.xml</file>
+    </artifact>
+    <artifact name="setTicket" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/setTicket.xml</file>
+    </artifact>
+    <artifact name="getUser" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getUser.xml</file>
+    </artifact>
+    <artifact name="signup" groupId="com.example.ESBTrain.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/signup.xml</file>
+    </artifact>
+    <artifact name="addUser" groupId="com.example.ESBTrain.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/addUser.xml</file>
+    </artifact>
+    <artifact name="train" groupId="com.example.ESBTrain.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/train.xml</file>
+    </artifact>
+    <artifact name="train2" groupId="com.example.ESBTrain.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/train2.xml</file>
+    </artifact>
+</artifacts>
